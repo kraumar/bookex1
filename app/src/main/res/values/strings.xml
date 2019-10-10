@@ -1,0 +1,16 @@
+<resources>
+    <string name="facebook_app_id">1312046168970847</string>
+    <string name="fb_login_protocol_scheme">fb1312046168970847</string>
+    <string name="app_name">bookex</string>
+    <string name="email_val">Email</string>
+    <string name="pass_val">Password</string>
+    <string name="log_val">Log In</string>
+    <string name="reg_val">Register</string>
+    <string name="registerd">If you don\'t have an account , please click here</string>
+    <string name="succes">Succes!</string>
+    <string name="logout">Log Out</string>
+    <string name="title_activity_main_login">MainLogin</string>
+    <string name="google_login">Log in with Google!</string>
+    <string name="email_login">Log in with Email!</string>
+    <string name="facebook_login">Log in with Facebook!</string>
+</resources>

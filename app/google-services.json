@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "682582491020",
+    "firebase_url": "https://bookex1.firebaseio.com",
+    "project_id": "bookex1",
+    "storage_bucket": "bookex1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:682582491020:android:b71b4dc282fd4842c060a9",
+        "android_client_info": {
+          "package_name": "com.kraumar.bookex1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "682582491020-lupstu2rac7c5kplo34a08f1an2rokmh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kraumar.bookex1",
+            "certificate_hash": "3d99653c75fb12c0bfe989e099367a64343ccdf7"
+          }
+        },
+        {
+          "client_id": "682582491020-u4usla146n3ret9vjctd9broupsut8rg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0vVVrWMIlfKomBSQio-ZwNRZ0dFkqp9k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "682582491020-u4usla146n3ret9vjctd9broupsut8rg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
