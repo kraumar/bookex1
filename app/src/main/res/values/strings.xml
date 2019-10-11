@@ -13,4 +13,23 @@
     <string name="google_login">Log in with Google!</string>
     <string name="email_login">Log in with Email!</string>
     <string name="facebook_login">Log in with Facebook!</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">Hello </string>
+    <string name="slide_1_desc">The easiest way to find books!</string>
+
+    <string name="slide_2_title">Chuj</string>
+    <string name="slide_2_desc">HWDP</string>
+
+    <string name="slide_3_title">hehehehehhehe</string>
+    <string name="slide_3_desc">hehehhehehehehhehe</string>
+
+    <string name="slide_4_title">hihihihihihi</string>
+    <string name="slide_4_desc">hihihihihihihih</string>
+
+    <string name="play_again_desc">hahahahahhahah</string>
+    <string name="play_again">hahahhahahhahaha</string>
+
 </resources>

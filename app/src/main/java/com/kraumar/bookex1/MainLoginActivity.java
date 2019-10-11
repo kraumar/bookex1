@@ -29,6 +29,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.FirebaseUserMetadata;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 
@@ -229,11 +230,28 @@ public class MainLoginActivity extends AppCompatActivity implements View.OnClick
     private void updateUI(boolean signedIn) {
         if (signedIn) {
 
-            Intent intent = new Intent(MainLoginActivity.this,MainActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-            finish();
-            overridePendingTransition(0, 0);
-            startActivity(intent);
+
+            FirebaseUserMetadata metadata = mAuth.getCurrentUser().getMetadata();
+
+            if (metadata.getCreationTimestamp() == metadata.getLastSignInTimestamp()) {
+
+                Intent intent = new Intent(MainLoginActivity.this,MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                finish();
+                overridePendingTransition(0, 0);
+                startActivity(intent);
+
+            } else {
+
+                Intent intent = new Intent(MainLoginActivity.this,MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                finish();
+                overridePendingTransition(0, 0);
+                startActivity(intent);
+
+            }
+
+
 
         } else {
 
