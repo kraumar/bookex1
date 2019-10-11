@@ -33,6 +33,7 @@ public class NewUser extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
 
         // Making notification bar transparent
@@ -130,7 +131,11 @@ public class NewUser extends AppCompatActivity {
 
     private void launchMainInterface() {
 
-        Intent intent = new Intent(this,MainActivity.class);
+        Intent intent = new Intent(NewUser.this,MainActivity.class);
+        overridePendingTransition(0,0);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        finish();
+        overridePendingTransition(0, 0);
         startActivity(intent);
 
     }

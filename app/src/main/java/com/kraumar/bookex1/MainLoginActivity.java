@@ -18,7 +18,6 @@ import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -235,7 +234,7 @@ public class MainLoginActivity extends AppCompatActivity implements View.OnClick
 
             if (metadata.getCreationTimestamp() == metadata.getLastSignInTimestamp()) {
 
-                Intent intent = new Intent(MainLoginActivity.this,MainActivity.class);
+                Intent intent = new Intent(MainLoginActivity.this,NewUser.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 finish();
                 overridePendingTransition(0, 0);
