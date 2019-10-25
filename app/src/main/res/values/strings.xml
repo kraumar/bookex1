@@ -16,6 +16,7 @@
     <string name="next">NEXT</string>
     <string name="skip">SKIP</string>
     <string name="start">GOT IT</string>
+    <string name="email_verification">we have sent you an activation link on your email!</string>
 
     <string name="slide_1_title">Hello </string>
     <string name="slide_1_desc">The easiest way to find books!</string>

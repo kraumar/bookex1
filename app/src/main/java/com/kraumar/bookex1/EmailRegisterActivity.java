@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -18,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
+import com.google.firebase.auth.FirebaseUser;
 
 public class EmailRegisterActivity extends AppCompatActivity {
 
@@ -29,7 +31,9 @@ public class EmailRegisterActivity extends AppCompatActivity {
     EditText password_2;
     EditText eMail;
     Button loginBut;
-    FirebaseAuth xfirebaseAuth;
+    FirebaseAuth xfirebaseAuth = FirebaseAuth.getInstance();
+    TextView email_ver;
+
 
 
 
@@ -41,11 +45,12 @@ public class EmailRegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_email_register);
 
 
-        xfirebaseAuth = FirebaseAuth.getInstance();
         eMail         = findViewById(R.id.emailRegister);
         password_1    = findViewById(R.id.password1);
         password_2    = findViewById(R.id.password2);
         loginBut      = findViewById(R.id.registerBut);
+        email_ver     = findViewById(R.id.verification_text);
+        FirebaseUser user = xfirebaseAuth.getCurrentUser();
 
         loginBut.setOnClickListener(new View.OnClickListener(){
 
@@ -127,12 +132,21 @@ public class EmailRegisterActivity extends AppCompatActivity {
                             }
                             else{
 
-                                Intent intent = new Intent(EmailRegisterActivity.this,NewUser.class);
-                                overridePendingTransition(0,0);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                                finish();
-                                overridePendingTransition(0, 0);
-                                startActivity(intent);
+                                email_ver.setVisibility(View.VISIBLE);
+
+
+                                user.sendEmailVerification()
+                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                if (task.isSuccessful()) {
+                                                    Log.d(TAG, "Email sent.");
+                                                }
+                                            }
+                                        });
+
+
+
 
                             }
 

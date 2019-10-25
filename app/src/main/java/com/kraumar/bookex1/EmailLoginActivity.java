@@ -29,7 +29,7 @@ public class EmailLoginActivity extends AppCompatActivity {
     Button button;
     TextView register;
     FirebaseAuth xFirebaseAuth;
-    FirebaseAuth.AuthStateListener xAuthStateListener;
+
 
 
     @Override
@@ -43,25 +43,7 @@ public class EmailLoginActivity extends AppCompatActivity {
         button        = findViewById(R.id.loginBut);
         register      = findViewById(R.id.textLogin);
 
-        xAuthStateListener = new FirebaseAuth.AuthStateListener() {
 
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-
-                FirebaseUser xFirebaseUser = xFirebaseAuth.getCurrentUser();
-
-                if(xFirebaseUser != null){ //sprawdza czy jestesmy zalogowani
-
-                    Intent intent = new Intent(EmailLoginActivity.this,MainActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                    finish();
-                    overridePendingTransition(0, 0);
-                    startActivity(intent);
-
-                }
-
-            }
-        };
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -167,13 +149,7 @@ public class EmailLoginActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onStart() {
 
-        super.onStart();
-        xFirebaseAuth.addAuthStateListener(xAuthStateListener);
-
-    }
 
     @Override
     public void onBackPressed() {

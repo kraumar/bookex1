@@ -41,6 +41,7 @@ public class MainLoginActivity extends AppCompatActivity implements View.OnClick
     private static final int RC_SIGN_IN = 9001;
 
 
+
     private FirebaseAuth mAuth;
     private GoogleSignInClient mGoogleSignInClient;
     private CallbackManager mCallbackManager;
@@ -217,9 +218,9 @@ public class MainLoginActivity extends AppCompatActivity implements View.OnClick
 
     private void signInEmail(){
 
+        finish();
         Intent intent = new Intent(MainLoginActivity.this,EmailLoginActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-        finish();
         overridePendingTransition(0, 0);
         startActivity(intent);
 
@@ -242,9 +243,9 @@ public class MainLoginActivity extends AppCompatActivity implements View.OnClick
 
             } else {
 
+                finish();
                 Intent intent = new Intent(MainLoginActivity.this,MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                finish();
                 overridePendingTransition(0, 0);
                 startActivity(intent);
 
